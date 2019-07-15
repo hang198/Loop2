@@ -5,23 +5,19 @@
     <title>Title</title>
 </head>
 <body>
-<input id="inputValue" type="text" >
-<button type="button" value="" onclick="printFibonacci()">Print Fibonacci</button>
-<input id="result1">
 <script>
-    function printFibonacci() {
-        let n = parseInt(document.getElementById('inputValue').value);
-        let f1 = 0;
-        let f2 = 1;
-        let fn;
-        document.getElementById('result1').value += f1 + " " + f2 + " ";
-        for (let i = 2; i < n; i++) {
-            fn = f1 + f2;
-            f1=f2;
-            f2 = fn;
-            document.getElementById('result1').value += fn + " ";
+    function printFibonacci(number) {
+        let arr = [];
+        arr[0] = 0;
+        arr[1] = 1;
+        document.write(arr[0] + " " + arr[1] + " ");
+        for (let i = 2; i < number; i++) {
+            arr[i] = arr[i - 1] + arr[i - 2];
+            document.write(arr[i] + " ");
         }
     }
+
+    printFibonacci(20);
 
 </script>
 </body>
